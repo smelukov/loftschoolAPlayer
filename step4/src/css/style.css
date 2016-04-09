@@ -1,0 +1,11 @@
+body {
+    padding-bottom: 50px;
+}
+
+.control-panel {
+    padding: 6px 6px 20px;
+}
+
+.control-panel button {
+    margin: 2px;
+}

@@ -1,0 +1,20 @@
+<ul class="list-group" id="audioList">
+    <% _.each(model.list, function(song) { %>
+    <li class="list-group-item" data-role="item" data-id="<%= song.id %>">
+        <div class="row">
+            <div class="col-xs-10">
+                <span class="glyphicon glyphicon-play" data-role="playback"></span>
+                <span class="title"><%= song.artist %> - <%= song.title %></span>
+            </div>
+            <div class="col-xs-2 text-right"><%= helpers.formatTime(song.duration) %></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger" data-role="progressbar" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <% }); %>
+</ul>

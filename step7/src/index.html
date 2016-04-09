@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>VK Player</title>
+    <!-- inject:css -->
+    <!-- endinject -->
+
+</head>
+<body>
+<div class="container">
+    <div id="headerInfo"></div>
+
+    <div id="playlist"></div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="container text-center control-panel" id="controlPanel">
+        <button type="button" class="btn btn-default btn-lg" id="prevSongButton">
+            <span class="glyphicon glyphicon-step-backward"></span>
+        </button>
+        <button type="button" class="btn btn-primary btn-lg" id="mainPlaybackButton">
+            <span class="glyphicon glyphicon-play" data-role="playback"></span>
+        </button>
+        <button type="button" class="btn btn-default btn-lg" id="nextSongButton">
+            <span class="glyphicon glyphicon-step-forward"></span>
+        </button>
+    </div>
+</nav>
+
+<script type="text/x-handlebars-template" id="default_meTemplate">
+    <h1>{{text}}</h1>
+</script>
+
+<script type="text/x-handlebars-template" id="default_playlistTemplate">
+    <ul class="list-group" id="audioList">
+        {{#each list}}
+        <li class="list-group-item" data-role="item" data-id="{{id}}">
+            <div class="row">
+                <div class="col-xs-10">
+                    <span class="glyphicon glyphicon-play" data-role="playback"></span>
+                    <span class="title">{{artist}} - {{title}}</span>
+                </div>
+                <div class="col-xs-2 text-right">{{formatTime duration}}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger" data-role="progressbar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</script>
+
+<script src="./vendor.js" data-main="main.js"></script>
+</body>
+</html>
